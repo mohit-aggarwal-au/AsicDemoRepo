@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: abn_lookup_demo
+  tags:
+    - payments
+    - microservices
+  links:
+    - url: https://monitoring.example.com/payment-service
+      title: Monitoring Dashboard
+      icon: dashboard
+    - url: https://docs.example.com/payment-service
+      title: API Documentation
+      icon: docs
+    - url: https://logging.example.com/payment-service
+      title: Logs Viewer
+      icon: logs
+  annotations:
+    backstage.io/techdocs-ref: url:https://docs.example.com/payment-service
+    github.com/project-slug: my-org/payment-service
+    monitoring-url: https://monitoring.example.com/payment-service
+    pagerduty.com/service-url: https://pagerduty.com/services/ABC123
+  description: Swagger PetStore Sample REST API
+spec:
+  type: openapi
+  lifecycle: production
+  owner: user:guest
+  providesApis:
+    - payment-api
+  consumesApis:
+    - user-profile-api
+  definition:
+    $text: https://github.com/mohit-aggarwal-au/AsicDemo/blob/main/spec3.0.yaml
